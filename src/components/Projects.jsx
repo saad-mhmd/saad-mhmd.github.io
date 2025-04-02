@@ -17,7 +17,7 @@ const projectsData = [
           href="https://iavc.fr/romain/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[rgb(8,156,163)]"
+          className="font-orbitron text-[rgb(8,156,163)]"
         >
           for iAVC
         </a>
@@ -90,13 +90,13 @@ const ProjectCard = ({ project }) => {
 
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3">
-            <div className="text-xl font-semibold">{project.title}</div>
+            <div className="font-orbitron text-xl font-semibold">{project.title}</div>
             <p className="text-gray-400">{project.description}</p>
           </div>
 
           <div className="flex flex-wrap gap-5">
             {project.technologies.map((tech, index) => (
-              <span key={index} className="rounded-lg bg-black p-3">
+              <span key={index} className="font-orbitron text-sm rounded-lg bg-black p-3">
                 {tech}
               </span>
             ))}
@@ -114,7 +114,7 @@ const Projects = () => {
       className="flex min-h-screen w-full flex-col items-center justify-center gap-16 p-4 md:px-14 md:py-24"
     >
       <ScrollReveal>
-        <h1 className="text-4xl font-light text-white md:text-6xl">
+        <h1 className="font-orbitron text-4xl font-light text-white md:text-6xl">
           My Projects
         </h1>
       </ScrollReveal>

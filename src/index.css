@@ -2,20 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
-
-*{
-  font-family: 'Orbitron', 'Poppins';
+* {
+  font-family: "Poppins";
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar{
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+}
+
+::-webkit-scrollbar {
   width: 20px;
 }
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.9);
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, rgb(0, 62, 196), rgb(184, 0, 153));
 }
