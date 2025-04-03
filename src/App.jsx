@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { AnimatePresence } from 'framer-motion';
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -15,7 +16,7 @@ function App() {
 
   const handleCloseExitModal = () => {
     setIsExitModalOpen(false);
-    // Optional: Maybe mark as 'closed-this-session' if needed, but localStorage handles 'shown-once'
+    // the modal will be showed once per user on the browser (until localStorage is cleared)
   };
 
   // Exit Intent Detection Logic
@@ -26,12 +27,11 @@ function App() {
       const shouldShow = e.clientY < 15; // Sensitivity (pixels)
 
       if (shouldShow) {
-        // Check localStorage to see if the modal has already been shown before (in this session or ever)
+        // Check localStorage
         const alreadyShown = localStorage.getItem("exitIntentShown");
 
         if (!alreadyShown) {
           // If not shown before, open the modal and mark it as shown
-          console.log("Exit intent detected, opening modal."); // debugging
           setIsExitModalOpen(true);
           localStorage.setItem("exitIntentShown", "true");
 
@@ -56,7 +56,7 @@ function App() {
     // This covers the case where the listener is still active (modal never shown)
     return () => {
       document.removeEventListener("mouseout", handleMouseLeave);
-      console.log("Cleanup: Removed exit intent listener."); // For debugging
+      console.log("Cleanup: Removed exit intent listener."); // debugging
     };
   }, []); // Empty dependency array ==> this effect runs only once on mount
 
@@ -87,10 +87,15 @@ function App() {
 
       <GitHubStats />
 
-      <ExitIntentModal
-        isOpen={isExitModalOpen}
-        onClose={handleCloseExitModal}
-      />
+      <AnimatePresence>
+        {isExitModalOpen && ( // Conditionally render
+          <ExitIntentModal
+            key="exit-intent-modal"
+            isOpen={isExitModalOpen}
+            onClose={handleCloseExitModal}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 }
