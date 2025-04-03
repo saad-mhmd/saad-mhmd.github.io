@@ -4,6 +4,7 @@ import Tech from "./components/Tech";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import retroCar from './assets/retro_car.mp4';
+import GitHubStats from "./components/GitHubStats";
 
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
         <Projects />
         <Contact />
       </main>
+
+      <GitHubStats />
+
     </>
   );
 }
