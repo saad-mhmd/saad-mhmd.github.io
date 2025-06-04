@@ -5,7 +5,7 @@ import imagePillPal from "/public/PillPal.jpg";
 import imageIoTMonitoring from "/public/iot_monitoring.jpg";
 import imageRomain from "/public/romain.jpg";
 
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const projectsData = [
   {
@@ -30,7 +30,7 @@ const projectsData = [
   },
   {
     image: imagePoly,
-    title: "MAS Polymorphic Simluation",
+    title: "MAS Polymorphic Simulation",
     description:
       "Developed a Java-based multi-agent simulation to visualize interactions between four competing agent groups, employing object-oriented principles and effectively utilizing the Singleton design pattern.",
     technologies: ["Java"],
@@ -40,7 +40,7 @@ const projectsData = [
     title: "Donation Website",
     description:
       "Built a secure, responsive donation webpage during my internship at Openmind Projects, using Node.js, ExpressJS, and Stripe API to enhance funding for global education and empowerment initiatives.",
-    technologies: ["Javascript", "Node.js", "ExressJS"],
+    technologies: ["Javascript", "Node.js", "ExpressJS"],
   },
   {
     image: imagePillPal,
@@ -67,14 +67,14 @@ const projectsData = [
 
 const ScrollReveal = ({ children }) => {
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
       {children}
-    </motion.div>
+      </Motion.div>
   );
 };
 
