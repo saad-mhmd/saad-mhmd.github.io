@@ -57,7 +57,7 @@ const Navbar = () => {
 
         <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-pink-500 hover:opacity-100">
           <a
-            href="https://www.instagram.com/mo7ammadsa3d"
+            href="https://www.instagram.com/mksa4d"
             target="_blank"
             rel="noreferrer"
           >
@@ -141,7 +141,7 @@ const Navbar = () => {
 
             <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-blue-500 hover:opacity-100">
               <a
-                href="https://www.instagram.com/mo7ammadsa3d"
+                href="https://www.instagram.com/mksa4d"
                 target="_blank"
                 rel="noreferrer"
               >
