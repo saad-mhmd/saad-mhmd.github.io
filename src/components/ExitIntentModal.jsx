@@ -1,6 +1,6 @@
 import React from "react";
 import { BiX } from "react-icons/bi";
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 // Animation variants for the overlay and modal content
 const overlayVariants = {
@@ -16,7 +16,7 @@ const modalVariants = {
 };
 
 
-const ExitIntentModal = ({ isOpen, onClose }) => {
+const ExitIntentModal = ({ onClose }) => {
 
   // Prevent clicks inside the modal content from closing it
   const handleContentClick = (e) => {
@@ -25,7 +25,7 @@ const ExitIntentModal = ({ isOpen, onClose }) => {
 
   return (
     // Fullscreen Overlay
-    <motion.div
+    <Motion.div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
       onClick={onClose} // Close modal if overlay is clicked
       variants={overlayVariants} // Apply overlay variants
@@ -34,7 +34,7 @@ const ExitIntentModal = ({ isOpen, onClose }) => {
       exit="exit" // Define exit animation
     >
       {/* Modal Content Container */}
-      <motion.div
+      <Motion.div
         className="relative w-full max-w-md rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 p-6 shadow-2xl shadow-indigo-900/50 border border-indigo-700/50"
         onClick={handleContentClick}  // Prevent clicks inside from closing
         variants={modalVariants}
@@ -72,8 +72,8 @@ const ExitIntentModal = ({ isOpen, onClose }) => {
             Say Hello!
           </a>
         </div>
-      </motion.div>
-    </motion.div>
+      </Motion.div>
+    </Motion.div>
   );
 };
 
